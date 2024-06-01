@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('first_name');
             $table->string('last_name');
-            $table->date('date_birth');
-            $table->integer('phone');
+            $table->date('date_birth')->nullable();
+            $table->string('phone');
             $table->string('membership_name');
             $table->integer('duration');
             $table->timestamps();
