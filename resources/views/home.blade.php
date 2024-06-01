@@ -1,3 +1,3 @@
 <x-app-layout>
-    <livewire:pages.home/>
+    <livewire:home.hero />
 </x-app-layout>
