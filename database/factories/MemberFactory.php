@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\duration;
+use App\Models\Membership;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +19,12 @@ class MemberFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'first_name' => fake()->firstName(),
+            'last_name' => fake()->lastName(),
+            'date_birth' => fake()->date(),
+            'phone' => fake()->phoneNumber(),
+            'membership_id' => Membership::factory(),
+            'duration_id' => duration::factory(),
         ];
     }
 }

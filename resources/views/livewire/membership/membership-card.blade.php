@@ -20,6 +20,6 @@
                 <p class="dark:text-gray-50">{{ $month }} Month{{ $month > 1 ? 's' : '' }}</p>
             @endforeach
         </div>
-        <a href="{{ route('join-online') }}">Join Now</a>
+        <a href="{{ route('join-online.create') }}">Join Now</a>
     </div>
 </div>
