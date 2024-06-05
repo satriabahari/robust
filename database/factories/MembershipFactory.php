@@ -17,8 +17,8 @@ class MembershipFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => fake()->sentence(),
-            'description' => fake()->text(),
+            'title' => fake()->sentence(2),
+            'description' => fake()->text(100),
             'price' => fake()->randomNumber(5, true),
         ];
     }

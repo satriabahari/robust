@@ -24,10 +24,11 @@
 <body class="font-sans antialiased">
     <livewire:layout.navigation />
     <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-        <main class="lg:px-8 px-4">
+        <main class="lg:px-16 px-4">
             {{ $slot }}
         </main>
     </div>
+    <livewire:layout.footer />
 </body>
 
 </html>
