@@ -16,8 +16,9 @@ $logout = function (Logout $logout) {
         <div class="flex justify-between h-16">
             <!-- Logo -->
             <div class="shrink-0 flex items-center">
-                <a href="{{ route('dashboard') }}" wire:navigate>
-                    <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
+                <a href="{{ route('home') }}" wire:navigate class="p-4 h-16 flex items-center justify-center">
+                    <img src="{{ '/images/logo-robust.png' }}" alt="logo robust" class=" h-5 ">
+                    <img src="{{ '/images/robust.png' }}" alt="logo robust" class=" h-5 ">
                 </a>
             </div>
             <div class="flex">
@@ -26,12 +27,6 @@ $logout = function (Logout $logout) {
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('home')" :active="request()->routeIs('home')" wire:navigate>
                         {{ __('Home') }}
-                    </x-nav-link>
-                </div>
-
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('member')" :active="request()->routeIs('member')" wire:navigate>
-                        {{ __('Member') }}
                     </x-nav-link>
                 </div>
 
@@ -54,7 +49,7 @@ $logout = function (Logout $logout) {
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
+                    <x-nav-link :href="route('dashboard.index')" :active="request()->routeIs('dashboard.index')" wire:navigate>
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
@@ -120,10 +115,6 @@ $logout = function (Logout $logout) {
                 {{ __('Home') }}
             </x-responsive-nav-link>
 
-            <x-responsive-nav-link :href="route('member')" :active="request()->routeIs('member')" wire:navigate>
-                {{ __('Member') }}
-            </x-responsive-nav-link>
-
             <x-responsive-nav-link :href="route('membership')" :active="request()->routeIs('membership')" wire:navigate>
                 {{ __('Membership') }}
             </x-responsive-nav-link>
@@ -132,7 +123,7 @@ $logout = function (Logout $logout) {
                 {{ __('Merchandise') }}
             </x-responsive-nav-link>
 
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
+            <x-responsive-nav-link :href="route('dashboard.index')" :active="request()->routeIs('dashboard.index')" wire:navigate>
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
         </div>
