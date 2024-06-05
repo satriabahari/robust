@@ -15,6 +15,6 @@ class MemberSeeder extends Seeder
      */
     public function run(): void
     {
-        Member::factory()->recycle(Membership::factory()->count(2)->create())->recycle(Duration::factory()->count(4)->create())->count(10)->create();
+        Member::factory()->recycle(Membership::factory()->count(2)->create())->recycle(Duration::factory()->count(4)->create())->count(20)->create();
     }
 }

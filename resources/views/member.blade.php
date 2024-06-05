@@ -1,3 +1,3 @@
-<x-app-layout>
-    <livewire:member.member />
-</x-app-layout>
+<x-dashboard-layout>
+    <livewire:member.member  />
+</x-dashboard-layout>
