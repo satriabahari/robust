@@ -17,9 +17,9 @@ Route::resource('member', MemberController::class);
 
 Route::resource('join-online', JoinOnlineController::class);
 
-Route::resource('dashboard', DashboardController::class);
-
 Route::view('merchandise', 'merchandise')->name('merchandise');
+
+Route::resource('dashboard', DashboardController::class);
 
 // Route::view('dashboard', 'dashboard')
 //     ->middleware(['auth', 'verified'])
