@@ -6,6 +6,7 @@ use App\Models\Duration;
 use App\Models\Member;
 use App\Models\Membership;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class MemberController extends Controller
 {
@@ -46,7 +47,7 @@ class MemberController extends Controller
 
         // Simpan data member baru ke database
         Member::create($request->all());
-
+        Alert::success('Success!', 'Member Created Successfully');
         // Redirect ke halaman index dengan pesan sukses
         return redirect('member');
     }
@@ -58,7 +59,7 @@ class MemberController extends Controller
     {
         // Tampilkan data member berdasarkan ID
         $member = Member::findOrFail($id);
-        return view('member-show', compact('member'));
+        return view('member', compact('member'));
     }
 
     /**
@@ -90,10 +91,11 @@ class MemberController extends Controller
 
         // Temukan member berdasarkan ID dan perbarui data
         $member = Member::findOrFail($id);
+        Alert::toast('Member Updated Successsfully', 'success');
         $member->update($request->all());
 
         // Redirect ke halaman index dengan pesan sukses
-        return redirect()->route('member.index')->with('success', 'Member updated successfully.');
+        return redirect('member');
     }
 
     /**
@@ -104,8 +106,7 @@ class MemberController extends Controller
         // Temukan member berdasarkan ID dan hapus data
         $member = Member::findOrFail($id);
         $member->delete();
-
-        // Redirect ke halaman index dengan pesan sukses
+        alert()->success('Hore!', 'Post Deleted Successfully');
         return redirect('member');
     }
 }
