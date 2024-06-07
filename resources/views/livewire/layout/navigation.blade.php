@@ -10,10 +10,10 @@ $logout = function (Logout $logout) {
 
 ?>
 
-<nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
+<nav x-data="{ open: false }" class="bg-white dark:bg-neutral-800 border-b border-neutral-100 dark:border-neutral-700 fixed w-full">
     <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
+    <div class="mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
             <!-- Logo -->
             <div class="shrink-0 flex items-center">
                 <a href="{{ route('home') }}" wire:navigate class="p-4 h-16 flex items-center justify-center">
@@ -48,14 +48,19 @@ $logout = function (Logout $logout) {
                     </x-nav-link>
                 </div>
 
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard.index')" :active="request()->routeIs('dashboard.index')" wire:navigate>
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
-                </div>
+                @if (auth()->user())
+                    <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                        <x-nav-link :href="route('dashboard.index')" :active="request()->routeIs('dashboard.index')" wire:navigate>
+                            {{ __('Dashboard') }}
+                        </x-nav-link>
+                    </div>
+                @endif
             </div>
             <x-dark-mode-toggle />
-
+            <button
+                class="bg-red-500 py-2 px-4 rounded-xl text-neutral-50 w-fit hover:bg-red-600 transition duration-300 active:scale-95">
+                <a href="{{ route('login') }}">Login</a>
+            </button>
             <!-- Settings Dropdown -->
             {{-- Matikan Sementara --}}
             {{-- <div class="hidden sm:flex sm:items-center sm:ms-6">

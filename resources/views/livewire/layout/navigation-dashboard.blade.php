@@ -1,21 +1,13 @@
-<nav class="w-full h-16 bg-white px-4 py-2 flex justify-between items-center">
-    <form method="GET" class="flex items-center px-4 py-2 gap-x-2 bg-neutral-100 rounded-full">
-        <button type="submit">
-            <x-search-icon />
-        </button>
-        <input type="text" name="search" id="search" placeholder="Search..."
-            class="bg-gray-100 p-0 text-sm focus:ring-0 border-none" />
-    </form>
+<nav class="w-full h-16 bg-white px-4 py-2 flex justify-end items-center dark:bg-neutral-800">
     <div class="flex gap-x-4 items-center">
-        <div class="bg-gray-100 rounded-full p-2 cursor-pointer">
+        <div class="bg-gray-100 rounded-full p-2 cursor-pointer dark:bg-neutral-700 dark:text-neutral-50">
             <x-clarity-notification-outline-badged class="w-5 h-5" />
         </div>
         <x-dark-mode-toggle />
-        <button class="bg-red-500 rounded-full text-white p-2">
-            {{-- <a href="{{ route('profile') }}"> --}}
-                <x-lineawesome-user-solid class="w-5 h-5" />
-            {{-- </a> --}}
-        </button>
-        <h5 class="font-medium">Satria Bahari</h5>
+        @if (Auth::check())
+            <h5 class="font-medium text-neutral-900 dark:text-neutral-50 capitalize">{{ Auth::user()->name }}</h5>
+        @else
+            <h5 class="font-medium text-neutral-900 dark:text-neutral-50 capitalize">Guest</h5>
+        @endif
     </div>
 </nav>
