@@ -17,7 +17,13 @@ const data = {
 const config = {
     type: "line",
     data: data,
-    options: {},
+    options: {
+        plugins: {
+            customCanvasBackgroundColor: {
+                color: "lightGreen",
+            },
+        },
+    },
 };
 
 new Chart(document.getElementById("myChart"), config);
