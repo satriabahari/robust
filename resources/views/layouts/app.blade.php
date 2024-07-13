@@ -25,7 +25,7 @@
 <body class="font-sans antialiased">
     <livewire:layout.navigation />
     <div class="min-h-screen bg-neutral-100 dark:bg-neutral-900">
-        <main class="lg:px-16 px-4">
+        <main class="lg:px-16 px-4 pb-12">
             {{ $slot }}
         </main>
         @include('sweetalert::alert')

@@ -1,4 +1,4 @@
-<div class="min-h-screen w-64 bg-white hidden lg:flex flex-col justify-between dark:bg-neutral-800">
+<div class="min-h-screen w-64 bg-white lg:flex flex-col justify-between dark:bg-neutral-800">
     <div class="flex flex-col">
         <a href="{{ route('home') }}">
             <div class="p-4 h-16 flex items-center">

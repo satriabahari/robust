@@ -2,11 +2,14 @@
 
 namespace App\Livewire\Membership;
 
+use App\Models\Duration;
 use Livewire\Component;
 
 class MembershipCard extends Component
 {
-    public $title, $price, $description;
+    public $title;
+    public $price;
+    public $description;
     public function mount($title, $price, $description)
     {
         $this->title = $title;
@@ -15,6 +18,7 @@ class MembershipCard extends Component
     }
     public function render()
     {
-        return view('livewire.membership.membership-card');
+        $durations = Duration::orderBy('title', 'asc')->get();
+        return view('livewire.membership.membership-card', compact('durations'));
     }
 }

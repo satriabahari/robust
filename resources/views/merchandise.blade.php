@@ -1,3 +1,3 @@
 <x-app-layout>
-    <livewire:merchandise.merchandise />
+    <livewire:merchandise.merchandise :merchandises="$merchandises" />
 </x-app-layout>

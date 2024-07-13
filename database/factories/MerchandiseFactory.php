@@ -16,11 +16,14 @@ class MerchandiseFactory extends Factory
      */
     public function definition(): array
     {
+        static $imageNumber = 1;
         return [
-            'title' => fake()->sentence(),
-            'description' => fake()->text(),
+            'title' => fake()->sentence(2),
+            'description' => fake()->sentence(3),
             'price' => fake()->randomNumber(5, true),
-            'stock' => fake()->randomDigit()
+            'stock' => fake()->numberBetween(20, 200),
+            // 'image' => fake()->imageUrl(640, 480, 'animals', true),
+            'image' => '/images/merchandise-' . $imageNumber++ . '.png',
         ];
     }
 }

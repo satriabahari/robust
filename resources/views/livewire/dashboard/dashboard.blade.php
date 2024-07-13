@@ -1,4 +1,4 @@
-<div class="grid grid-cols-1 lg:grid-cols-6 gap-4">
+<div class="grid grid-cols-1 lg:grid-cols-6 gap-4 ">
     <livewire:dashboard.statistic-item title="Total User" :count="$users" percentage="100"/>
     <livewire:dashboard.statistic-item title="Total Member" :count="$members" percentage="70"/>
     <livewire:dashboard.statistic-item title="Total Merchandise" :count="$merchandises" percentage="77.7"/>
